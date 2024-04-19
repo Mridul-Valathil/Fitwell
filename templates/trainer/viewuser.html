@@ -1,0 +1,180 @@
+{% extends 'trainer/trainerindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+{#<table width="316" class="table border-primary border-5 w-100 mx-auto">#}
+{#  <tr>#}
+{#    <th width="170" scope="row">Username</th>#}
+{#    <td width="72">{{ data.username }}</td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th scope="row">email</th>#}
+{#    <td>&nbsp;{{ data.email }}</td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th scope="row">phone</th>#}
+{#    <td>&nbsp;{{ data.phone }}</td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th scope="row">place</th>#}
+{#    <td>&nbsp;{{ data.place }}</td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th colspan="2" scope="row"><p><a href="/addtips/{{ data.id }}#trainer" class="btn btn-primary" style="width: 100px;">add tips</a></p>#}
+{#      <p><a href="/viewtips/{{ data.id }}#trainer" class="btn btn-outline-primary" style="width: 100px;">view tips</a></p>#}
+{#  </tr>#}
+{#</table>#}
+
+
+
+
+<div class="mb-5 text-center">
+{#            <h5 class="text-primary text-uppercase">Contact Us</h5>#}
+            <h1 class="display-3 text-uppercase mb-0">user profile</h1>
+        </div>
+    <div class="row g-0">
+            <div class="col-lg-6 mx-auto">
+                <div class="bg-dark p-5">
+                    <form action="" method="get">
+                       {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="textfield" class=" text-uppercase pb-3" style="color: white; font-size: 1.5rem">&nbsp; Username</label>
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.username }}</div></div>
+                            </div>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="textfield" class=" text-uppercase pb-3" style="color: white; font-size: 1.5rem">&nbsp; Gender</label>
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.gender }}</div></div>
+                            </div>
+
+{#                            <div class="col-12">#}
+{#    <label for="gender" class="text-uppercase pb-3" style="color: white; font-size: 1.5rem">&nbsp; Gender</label>#}
+{#    <div class="form-check">#}
+{#        <input class="form-check-input" type="radio" name="gender" id="male" value="male">#}
+{#        <label class="form-check-label" for="male">#}
+{#            Male#}
+{#        </label>#}
+{#    </div>#}
+{#    <div class="form-check">#}
+{#        <input class="form-check-input" type="radio" name="gender" id="female" value="female">#}
+{#        <label class="form-check-label" for="female">#}
+{#            Female#}
+{#        </label>#}
+{#    </div>#}
+{#    <div class="form-check">#}
+{#        <input class="form-check-input" type="radio" name="gender" id="other" value="other">#}
+{#        <label class="form-check-label" for="other">#}
+{#            Other#}
+{#        </label>#}
+{#    </div>#}
+{#</div>#}
+
+
+                            <div class="col-12">
+                                <label for="textfield2" class=" text-uppercase pb-3" style="color: white; font-size: 1.5rem">&nbsp; email</label>
+{#                                <input  type="time" class="form-control bg-light border-0 px-4" name="textfield2" placeholder="From Time" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.email }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield3" class=" text-uppercase pb-3" style="color: white; font-size: 1.5rem">&nbsp; phone</label>
+{#                                <input  type="time" class="form-control bg-light border-0 px-4" name="textfield3" placeholder="To Time" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.phone }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield4" class=" text-uppercase pb-3" style="color: white; font-size: 1.5rem">&nbsp; place</label>
+{#                                <  type="text" class="form-control bg-light border-0 px-4" name="textfield4" placeholder="place" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.place }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield4" class=" text-uppercase pb-3" style="color: white; font-size: 1.5rem">&nbsp; height</label>
+{#                                <  type="text" class="form-control bg-light border-0 px-4" name="textfield4" placeholder="place" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ obj.height }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield4" class=" text-uppercase pb-3" style="color: white; font-size: 1.5rem">&nbsp; weight</label>
+{#                                <  type="text" class="form-control bg-light border-0 px-4" name="textfield4" placeholder="place" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ obj.weight }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield4" class=" text-uppercase pb-3" style="color: white; font-size: 1.5rem">&nbsp; allergies</label>
+{#                                <  type="text" class="form-control bg-light border-0 px-4" name="textfield4" placeholder="place" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ obj.alergies }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield4" class=" text-uppercase pb-3" style="color: white; font-size: 1.5rem">&nbsp; medical history</label>
+{#                                <  type="text" class="form-control bg-light border-0 px-4" name="textfield4" placeholder="place" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ obj.medicalhistory }}</div></div>
+                            </div>
+{#                            <div class="col-12">#}
+{#                                <label for="textfield5" class=" text-uppercase pb-3" style="color: white; font-size: 1.5rem">&nbsp; post</label>#}
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield5" placeholder="post" style="height: 55px;">#}
+{#                                <div class=" bg-dark border-0 px-4 " name="textfield" placeholder="Batch Name" style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px"">{{ data.post }}</div></div>#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield6" class=" text-uppercase pb-3" style="color: white; font-size: 1.5rem">&nbsp; pin</label>#}
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield6" placeholder="pin" style="height: 55px;">#}
+{#                                <div class=" bg-dark border-0 px-4 " name="textfield" placeholder="Batch Name" style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.pin }}</div></div>#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield7" class="text-primary text-uppercase pb-3">&nbsp; Opening Time</label>#}
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield7" placeholder="lattitude" style="height: 55px;">#}
+{#                                <div class=" bg-dark border-0 px-4 " name="textfield" placeholder="Batch Name" style="height: 55px; color: white; font-size: 1.5rem">{{ data.openingtime }}</div>#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield8" class="text-primary text-uppercase pb-3">&nbsp; Closing Time</label>#}
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield8" placeholder="longitude" style="height: 55px;">#}
+{#                                <div class=" bg-dark border-0 px-4 " name="textfield" placeholder="Batch Name" style="height: 55px; color: white; font-size: 1.5rem">{{ data.closingtime }}</div>#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield8" class="text-primary text-uppercase pb-3">&nbsp; Latitude</label>#}
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield8" placeholder="longitude" style="height: 55px;">#}
+{#                                <div class=" bg-dark border-0 px-4 " name="textfield" placeholder="Batch Name" style="height: 55px; color: white; font-size: 1.5rem">{{ data.latitude }}</div>#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield8" class="text-primary text-uppercase pb-3">&nbsp; longitude</label>#}
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield8" placeholder="longitude" style="height: 55px;">#}
+{#                                <div class=" bg-dark border-0 px-4 " name="textfield" placeholder="Batch Name" style="height: 55px; color: white; font-size: 1.5rem">{{ data.longitude }}</div>#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield8" class=" text-uppercase pb-3" style="color: white; font-size: 1.5rem">&nbsp; location</label>#}
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield8" placeholder="longitude" style="height: 55px;">#}
+{#                                <div class=" bg-dark border-0 px-4 " name="textfield" placeholder="Batch Name" style="height: 55px; color: white; font-size: 1.5rem"><a href="https://www.google.com/maps/?q={{ data.latitude }},{{ data.longitude }}" class="btn btn-secondary" style="display: flex; justify-content: center;"> click here to locate</a></div>#}
+{#                            </div>#}
+{#                            <div class="col-6">#}
+{#                                <input type="email" class="form-control bg-light border-0 px-4" placeholder="Password" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield" class="text-primary text-uppercase pb-3">&nbsp; PASSWORD</label>#}
+{#                                <input type="password" class="form-control bg-light border-0 px-4" name="textfield2" placeholder="password" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <textarea class="form-control bg-light border-0 px-4 py-3" rows="4" placeholder="Message"></textarea>#}
+{#                            </div>#}
+{#     <tr>#}
+{#            <td><div id="gmap"></div></td>#}
+{#     </tr>#}
+
+                            <div class="col-12">
+{#                                <button class="btn btn-primary w-100 py-3 " type="submit">Submit</button>#}
+                                <a href="/addtips/{{ data.id }}#trainer" class="btn btn-primary w-100 py-3" style="margin-bottom: 20px; margin-top: 20px">add tips</a>
+                                <a href="/chatt/{{ data.id }}#trainer" class="btn btn-secondary w-100 py-3" style="margin-bottom: 20px; margin-top: 20px">chat</a>
+                                <a href="/viewtips/{{ data.id }}#trainer" class="btn btn-outline-primary w-100 py-3">view tips</a>
+{#                                <a href="/registration" style="margin-top: 20px" class="btn btn-outline-primary w-100 py-3" type="submit">SIGN UP</a>#}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>
+{% endblock %}

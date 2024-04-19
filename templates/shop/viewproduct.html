@@ -1,0 +1,84 @@
+{% extends 'shop/shopindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<style>
+/* Internal CSS starts here */
+table {
+  border: 2px solid #fc7442;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+ td {
+  border: 2px solid #fc7442;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+    font-size: 25px;
+    padding: 20px;
+    border: 2px solid white;
+    text-transform: capitalize;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: lightgray;
+    color: black;
+}
+tr{
+    color: black;
+}
+
+
+{#.btun {#}
+{#  background-color: red;#}
+{#  color: white;#}
+{#  border-radius: 5px;#}
+{#  padding: 5px 10px;#}
+{#  text-decoration: none;#}
+{#}#}
+{##}
+{#.btun:hover {#}
+{#  background-color: #0056b3;#}
+{#}#}
+</style>
+</head>
+
+<body>
+
+
+<div class="mb-5 text-center">
+{#            <h5 class="text-primary text-uppercase">Contact Us</h5>#}
+            <h1 class="display-3 text-uppercase mb-0">View products</h1>
+        </div>
+
+<table>
+  <tr>
+    <th width="253" scope="row">Product</th>
+    <td width="230">&nbsp;{{ data.itemname }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Product Images</th>
+    <td>&nbsp;<img src="" ></td>
+  </tr>
+  <tr>
+    <th scope="row">Product Description</th>
+    <td>&nbsp;{{ data.itemdescription }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Price</th>
+    <td>&nbsp;{{ data.price }}</td>
+  </tr>
+</table>
+</body>
+</html>
+{% endblock %}

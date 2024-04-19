@@ -1,0 +1,77 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<style>
+/* Internal CSS starts here */
+table {
+  border: 2px solid #fc7442;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+ td {
+  border: 2px solid #fc7442;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+    font-size: 25px;
+    padding: 20px;
+    border: 2px solid white;
+    text-transform: capitalize;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: lightgray;
+    color: black;
+}
+tr{
+    color: black;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="mb-5 text-center">
+{#            <h5 class="text-primary text-uppercase">Contact Us</h5>#}
+            <h1 class="display-3 text-uppercase mb-0">View approved request of user</h1>
+        </div>
+
+
+
+<table>
+  <tr>
+    <th width="46" scope="col">#</th>
+    <th width="77" scope="col">username</th>
+    <th width="104" scope="col">Batch name</th>
+    <th width="125" scope="col">date and time</th>
+    <th width="136" scope="col">state</th>
+    <th width="136" scope="col"></th>
+  </tr>
+      {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>&nbsp;&nbsp;{{ i.USER.username }}</td>
+    <td>&nbsp;&nbsp;{{ i.BATCH.Batchname }}</td>
+    <td>&nbsp;&nbsp;&nbsp;{{ i.date }}<br>{{ i.time }}</td>
+    <td>&nbsp;{{ i.note }}</td>
+    <td><p><a href="/allocatetrainer/{{ i.id }}#admin" class="btn btn-primary">trainer allocation</a></p>
+  </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+{% endblock %}

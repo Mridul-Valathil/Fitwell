@@ -1,0 +1,383 @@
+{% extends 'trainer/trainerindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+
+      <div class="mb-5 text-center">
+{#            <h5 class="text-primary text-uppercase">Contact Us</h5>#}
+            <h1 class="display-3 text-uppercase mb-0">edit TRAINER profile</h1>
+        </div>
+    <div class="row g-0">
+            <div class="col-lg-6 mx-auto">
+                <div class="bg-dark p-5">
+                    <form action="/edittrainerprofile_post/{{ data.id }}" method="post">
+                       {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="textfield" class="text-primary text-uppercase pb-3">&nbsp; trainer name</label>
+                                <input  value="{{ data.username }}" type="text" class="form-control bg-light border-0 px-4" name="textfield"  style="height: 55px;">
+                            </div>
+{#                            <div class="col-12">#}
+{#                                <label for="textfield2" class="text-primary text-uppercase pb-3">&nbsp; email</label>#}
+{#                                <input  value="{{ data.phone }}" type="email" class="form-control bg-light border-0 px-4" name="textfield2" placeholder="email" style="height: 55px;">#}
+{#                            </div>#}
+                            <div class="col-12">
+                                <label for="textfield3" class="text-primary text-uppercase pb-3">&nbsp; phone no</label>
+                                <input  value="{{ data.phone }}" pattern="[789][0-9]{9}" type="text" class="form-control bg-light border-0 px-4" name="textfield3"  style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield4" class="text-primary text-uppercase pb-3">&nbsp; place</label>
+                                <input  value="{{ data.place }}" type="text" class="form-control bg-light border-0 px-4" name="textfield4" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield5" class="text-primary text-uppercase pb-3">&nbsp; post</label>
+                                <input value="{{ data.post }}" type="text" class="form-control bg-light border-0 px-4" name="textfield5" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield6" class="text-primary text-uppercase pb-3">&nbsp; pin</label>
+                                <input value="{{ data.pin }}" type="text" class="form-control bg-light border-0 px-4" name="textfield6"  style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield7" class="text-primary text-uppercase pb-3">&nbsp; lattitude</label>
+                                <input value="{{ data.latitude }}" type="text" class="form-control bg-light border-0 px-4" name="textfield7" id="textfield7"  style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield8" class="text-primary text-uppercase pb-3">&nbsp; longitude</label>
+                                <input value="{{ data.longitude }}" type="text" class="form-control bg-light border-0 px-4" name="textfield8" id="textfield8"  style="height: 55px;">
+                            </div>
+{#                            <div class="col-6">#}
+{#                                <input type="email" class="form-control bg-light border-0 px-4" placeholder="Password" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield" class="text-primary text-uppercase pb-3">&nbsp; PASSWORD</label>#}
+{#                                <input type="password" class="form-control bg-light border-0 px-4" name="textfield2" placeholder="password" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <textarea class="form-control bg-light border-0 px-4 py-3" rows="4" placeholder="Message"></textarea>#}
+{#                            </div>#}
+     <div>
+            <div id="gmap"></div>
+     </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3 " type="submit">Submit</button>
+                                <button class="btn btn-outline-primary w-100 py-3" style="margin-top: 1em" type="reset">reset</button>
+{#                                <a href="/registration" style="margin-top: 20px" class="btn btn-outline-primary w-100 py-3" type="submit">SIGN UP</a>#}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+{#    </div>#}
+</body>
+</html>
+ <style type="text/css">
+html { height: 100% }
+body { height: 100%; margin: 0; padding: 0 }
+#map_canvas { height: 100% }
+</style>
+
+<script type="text/javascript" async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6v5-2uaq_wusHDktM9ILcqIrlPtnZgEk&callback=GetMylocation">
+</script>
+<script type="text/javascript">
+
+    var map;
+        function initialize() {
+            var myLatlng = new google.maps.LatLng(11.618061975930,75.36565089010);
+            var myOptions = {
+                zoom:7,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            map = new google.maps.Map(document.getElementById("gmap"), myOptions);
+            // marker refers to a global variable
+            marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map
+            });
+
+            google.maps.event.addListener(map, "click", function(event) {
+                // get lat/lon of click
+                var clickLat = event.latLng.lat();
+                var clickLon = event.latLng.lng();
+
+                // show in input box
+                document.getElementById("textfield7").value = clickLat.toFixed(5);
+                document.getElementById("textfield8").value = clickLon.toFixed(5);
+
+{#                  var marker = new google.maps.Marker({#}
+{#                        position: new google.maps.LatLng(clickLat,clickLon),#}
+{#                        map: map#}
+{#                     });#}
+            });
+    }
+
+    window.onload = function () { GetMylocation() };
+
+
+</script>
+     <style>
+ div#gmap {
+
+        width: 100%;
+        height: 250px;
+        border:double;
+ }
+    </style>
+
+{#    <form id="form1" runat="server">#}
+<center>
+<!-- MAP HOLDER -->
+
+<!-- REFERENCES -->
+{#Lat: <input type="text" id='lat'>#}
+{#Lon: <input type="text" id='lon'>#}
+
+</center>
+
+
+
+
+<script>
+
+function GetMylocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    //x.innerHTML = "Geolocation is not supported by this browser.";
+      alert("Geolocation is not supported by this browser.")
+  }
+}
+var x1 = document.getElementById("textfield7");
+var x2 = document.getElementById("textfield8");
+var map;
+function showPosition(position) {
+  x1.value=position.coords.latitude;
+  x2.value=position.coords.longitude;
+
+  var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+            var myOptions = {
+                zoom:14,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            map = new google.maps.Map(document.getElementById("gmap"), myOptions);
+            // marker refers to a global variable
+            marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map
+            });
+
+            google.maps.event.addListener(map, "click", function(event) {
+                // get lat/lon of click
+                var clickLat = event.latLng.lat();
+                var clickLon = event.latLng.lng();
+
+                // show in input box
+                document.getElementById("textfield7").value = clickLat.toFixed(5);
+                document.getElementById("textfield8").value = clickLon.toFixed(5);
+
+{#                  var marker = new google.maps.Marker({#}
+{#                        position: new google.maps.LatLng(clickLat,clickLon),#}
+{#                        map: map#}
+{#                     });#}
+            });
+
+
+}
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+{#<form action="/edittrainerprofile_post/{{ data.id }}" method="post"><table width="285" class="table border-primary border-5 w-100 mx-auto">#}
+{#    {% csrf_token %}#}
+{#  <tr>#}
+{#    <th width="124" scope="row">trainer name </th>#}
+{#    <td width="145"><label for="textfield"></label>#}
+{#      <input type="text" class="form-control" name="textfield" id="textfield" value="{{ data.username }}"/></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th scope="row">email</th>#}
+{#    <td><label for="textfield2"></label>#}
+{#      <input type="text" name="textfield2" id="textfield2" /></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th scope="row">phone no</th>#}
+{#    <td><label for="textfield3"></label>#}
+{#      <input type="text" class="form-control" name="textfield3" id="textfield3" value="{{ data.phone }}"/></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th scope="row">place</th>#}
+{#    <td><label for="textfield4"></label>#}
+{#      <input type="text" class="form-control" name="textfield4" id="textfield4" value="{{ data.place }}"/></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th scope="row">post</th>#}
+{#    <td><label for="textfield5"></label>#}
+{#      <input type="text" class="form-control" name="textfield5" id="textfield5"  value="{{ data.post }}"/></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th scope="row">pin</th>#}
+{#    <td><label for="textfield6"></label>#}
+{#      <input type="text" class="form-control" name="textfield6" id="textfield6"  value="{{ data.pin }}"/></td>#}
+{#  </tr>#}
+{#   <tr>#}
+{#    <th scope="row">lattitude</th>#}
+{#    <td><label for="textfield6"></label>#}
+{#      <input type="text" class="form-control" name="textfield7" id="textfield7" value="{{ data.latitude }}"/></td>#}
+{#  </tr>#}
+{#    <tr>#}
+{#    <th scope="row">longitude</th>#}
+{#    <td><label for="textfield6"></label>#}
+{#      <input type="text" class="form-control" name="textfield8" id="textfield8" value="{{ data.longitude }}" /></td>#}
+{#  </tr>#}
+{#     <tr>#}
+{#            <td><div id="gmap"></div></td>#}
+{#        </tr>#}
+{#     <tr>#}
+{#   <th scope="row">password</th>#}
+{#    <td><label for="textfield7"></label>#}
+{#      <input type="password" name="textfield7" id="textfield7" /></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Submit"  class="btn btn-primary" />#}
+{#      <input type="reset" name="Reset" id="Reset" value="reset"  class="btn btn-secondary" /></th>#}
+{#    </tr>#}
+{#</table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+{# <style type="text/css">#}
+{#html { height: 100% }#}
+{#body { height: 100%; margin: 0; padding: 0 }#}
+{##map_canvas { height: 100% }#}
+{#</style>#}
+{##}
+{#<script type="text/javascript"#}
+{#src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6v5-2uaq_wusHDktM9ILcqIrlPtnZgEk&sensor=false">#}
+{#</script>#}
+{#<script type="text/javascript">#}
+{##}
+{#    var map;#}
+{#        function initialize() {#}
+{#            var myLatlng = new google.maps.LatLng(11.618061975930,75.36565089010);#}
+{#            var myOptions = {#}
+{#                zoom:7,#}
+{#                center: myLatlng,#}
+{#                mapTypeId: google.maps.MapTypeId.ROADMAP#}
+{#            }#}
+{#            map = new google.maps.Map(document.getElementById("gmap"), myOptions);#}
+{#            // marker refers to a global variable#}
+{#            marker = new google.maps.Marker({#}
+{#                position: myLatlng,#}
+{#                map: map#}
+{#            });#}
+{##}
+{#            google.maps.event.addListener(map, "click", function(event) {#}
+{#                // get lat/lon of click#}
+{#                var clickLat = event.latLng.lat();#}
+{#                var clickLon = event.latLng.lng();#}
+{##}
+{#                // show in input box#}
+{#                document.getElementById("textfield7").value = clickLat.toFixed(5);#}
+{#                document.getElementById("textfield8").value = clickLon.toFixed(5);#}
+{##}
+{#                  var marker = new google.maps.Marker({#}
+{#                        position: new google.maps.LatLng(clickLat,clickLon),#}
+{#                        map: map#}
+{#                     });#}
+{#            });#}
+{#    }#}
+{##}
+{#    window.onload = function () { GetMylocation() };#}
+{##}
+{##}
+{#</script>#}
+{#     <style>#}
+{# div#gmap {#}
+{##}
+{#        width: 300%;#}
+{#        height: 500px;#}
+{#        border:double;#}
+{# }#}
+{#    </style>#}
+{##}
+{#    <form id="form1" runat="server">#}
+{#<center>#}
+{#<!-- MAP HOLDER -->#}
+{##}
+{#<!-- REFERENCES -->#}
+{#Lat: <input type="text" id='lat'>#}
+{#Lon: <input type="text" id='lon'>#}
+{##}
+{#</center>#}
+{##}
+{##}
+{##}
+{##}
+{#<script>#}
+{##}
+{#function GetMylocation() {#}
+{#  if (navigator.geolocation) {#}
+{#    navigator.geolocation.getCurrentPosition(showPosition);#}
+{#  } else {#}
+{#    //x.innerHTML = "Geolocation is not supported by this browser.";#}
+{#      alert("Geolocation is not supported by this browser.")#}
+{#  }#}
+{#}#}
+{#var x1 = document.getElementById("textfield7");#}
+{#var x2 = document.getElementById("textfield8");#}
+{#var map;#}
+{#function showPosition(position) {#}
+{#  x1.value=position.coords.latitude;#}
+{#  x2.value=position.coords.longitude;#}
+{##}
+{#  var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);#}
+{#            var myOptions = {#}
+{#                zoom:14,#}
+{#                center: myLatlng,#}
+{#                mapTypeId: google.maps.MapTypeId.ROADMAP#}
+{#            }#}
+{#            map = new google.maps.Map(document.getElementById("gmap"), myOptions);#}
+{#            // marker refers to a global variable#}
+{#            marker = new google.maps.Marker({#}
+{#                position: myLatlng,#}
+{#                map: map#}
+{#            });#}
+{##}
+{#            google.maps.event.addListener(map, "click", function(event) {#}
+{#                // get lat/lon of click#}
+{#                var clickLat = event.latLng.lat();#}
+{#                var clickLon = event.latLng.lng();#}
+{##}
+{#                // show in input box#}
+{#                document.getElementById("textfield7").value = clickLat.toFixed(5);#}
+{#                document.getElementById("textfield8").value = clickLon.toFixed(5);#}
+{##}
+{#                  var marker = new google.maps.Marker({#}
+{#                        position: new google.maps.LatLng(clickLat,clickLon),#}
+{#                        map: map#}
+{#                     });#}
+{#            });#}
+{##}
+{##}
+{#}#}
+{#</script>#}
+{#{% endblock %}#}
+

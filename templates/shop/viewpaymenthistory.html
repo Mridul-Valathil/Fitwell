@@ -1,0 +1,147 @@
+{% extends 'shop/shopindex.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+<style>
+/* Internal CSS starts here */
+table {
+  border: 2px solid #fc7442;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+ td {
+  border: 2px solid #fc7442;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+    font-size: 25px;
+    padding: 20px;
+    border: 2px solid white;
+    text-transform: capitalize;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: lightgray;
+    color: black;
+}
+tr{
+    color: black;
+}
+
+</style>
+
+
+</head>
+<body><div class="mb-5 text-center">
+{#            <h5 class="text-primary text-uppercase">Contact Us</h5>#}
+            <h1 class="display-3 text-uppercase mb-0">view payment history</h1>
+        </div>
+    <div class="row g-0">
+            <div class="col-lg-6 mx-auto">
+                <div class="bg-dark p-5">
+                    <form action="" method="post">
+                       {% csrf_token %}
+                        <div class="row g-3">
+
+{#                            <div class="col-12">#}
+{#                                <label for="textfield" class="text-primary text-uppercase pb-3">&nbsp; Year</label>#}
+{#                                <select name="year">#}
+{#                                    <option value="2023">2023</option>#}
+{#                                    <option value="2024">2024</option>#}
+{#                                    <option value="2025">2025</option>#}
+{#                                    <option value="2026">2026</option>#}
+{#                                    <option value="2027">2027</option>#}
+{#                                    <option value="2028">2028</option>#}
+{#                                    <option value="2029">2029</option>#}
+{#                                    <option value="2030">2030</option>#}
+{#                                </select>#}
+{#                            </div>#}
+
+
+
+                            <div class="col-12">
+                                <label for="year" class="text-primary text-uppercase pb-3">&nbsp; Year</label>
+{#                                <input required type="text" class="form-control bg-light border-0 px-4" name="textfield" placeholder="Batch Name" style="height: 55px;">#}
+
+                                  <select name="year" id="select" class="form-control">
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2028">2028</option>
+                                    <option value="2029">2029</option>
+                                    <option value="2030">2030</option>
+                                  </select>
+                            </div>
+
+
+
+
+                            <div class="col-12">
+                                <label for="textfield2" class="text-primary text-uppercase pb-3">&nbsp; Month</label>
+                                <select name="month" id="select" class="form-control">
+                                    <option value="01">January</option>
+                                    <option value="02">February</option>
+                                    <option value="03">March</option>
+                                    <option value="04">April</option>
+                                    <option value="05">May</option>
+                                    <option value="06">June</option>
+                                    <option value="07">July</option>
+                                    <option value="08">August</option>
+                                    <option value="09">Septermber</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3 " type="submit" style="margin-bottom: 20px">Submit</button>
+{#                                <a href="/registration" style="margin-top: 20px" class="btn btn-outline-primary w-100 py-3" type="submit">SIGN UP</a>#}
+                            </div>
+                        </div>
+                    </form>
+
+                    <form>
+
+                        <table>
+  <tr>
+{#    <th scope="col">#</th>#}
+    <th scope="col">Date</th>
+    <th scope="col">Total</th>
+{#    <th scope="col">Post</th>#}
+  </tr>
+{#    {% for i in data %}#}
+  <tr>
+{#    <td>{{ forloop.counter }}</td>#}
+    <td>{{ data.date }}</td>
+    <td>{{ data.amt }}</td>
+{#    <td><p><a href="/approveshops/{{ i.LOGIN.id }}" class="btn btn-primary" style="width: 100px">approve</a></p>#}
+{#    <p><a href="/rejectshops/{{ i.LOGIN.id }}" class="btn btn-outline-dark" style="width: 100px">reject</a></p></td>#}
+  </tr>
+{#    {% endfor %}#}
+</table>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+{#    </div>#}
+
+</body>
+</html>
+{% endblock %}

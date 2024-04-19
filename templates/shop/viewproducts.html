@@ -1,0 +1,92 @@
+{% extends 'shop/shopindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<style>
+/* Internal CSS starts here */
+table {
+  border: 2px solid #fc7442;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+ td {
+  border: 2px solid #fc7442;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+    font-size: 25px;
+    padding: 20px;
+    border: 2px solid white;
+    text-transform: capitalize;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: lightgray;
+    color: black;
+}
+tr{
+    color: black;
+}
+
+
+{#.btun {#}
+{#  background-color: red;#}
+{#  color: white;#}
+{#  border-radius: 5px;#}
+{#  padding: 5px 10px;#}
+{#  text-decoration: none;#}
+{#}#}
+{##}
+{#.btun:hover {#}
+{#  background-color: #0056b3;#}
+{#}#}
+</style>
+</head>
+
+<body>
+
+
+<div class="mb-5 text-center">
+{#            <h5 class="text-primary text-uppercase">Contact Us</h5>#}
+            <h1 class="display-3 text-uppercase mb-0">View products</h1>
+        </div>
+
+
+
+<table>
+  <tr>
+    <th width="177" scope="col">#</th>
+    <th width="141" scope="col">Product Name</th>
+    <th width="189" scope="col">Description</th>
+    <th width="113" scope="col">Image</th>
+    <th width="107" scope="col">Price</th>
+    <th width="44" scope="col">&nbsp;</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>&nbsp;{{ i.itemname }}</td>
+    <td>&nbsp;{{ i.itemdescription }}</td>
+      <td><img src="{{ i.image }}" alt="{{ i.itemname }}" width="250"></td>
+    <td>&nbsp;{{ i.price }}</td>
+    <td><p><a href="/editproducts/{{ i.id }}#shop" class="btn btn-primary" style="width: 100px">edit</a></p>
+      <p><a href="/deleteproduct/{{ i.id }}" class="btn btn-secondary" style="width: 100px">delete</a></p></td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

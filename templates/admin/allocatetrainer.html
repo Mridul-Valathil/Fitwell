@@ -1,0 +1,117 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+{#<form action="/allocation_post/{{id}}" method="post">#}
+{#    <table class="table border-primary border-5 w-100 mx-auto">#}
+{#{% csrf_token %}#}
+{#  <tr>#}
+{#    <th scope="row">trainer</th>#}
+{#    <td ><label for="select"></label>#}
+{#      <select name="select" id="select" class="form-control">#}
+{#          {% for i in data %}#}
+{#          <option value="{{ i.id }}">{{ i.username }}</option>#}
+{#          {% endfor %}#}
+{#      </select></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th scope="row">batch</th>#}
+{#    <td><label for="select1"></label>#}
+{#      <select name="select1" id="select1" class="form-control">#}
+{#          {% for i in data1 %}#}
+{#          <option value="{{ i.id }}">{{ i.Batchname }}</option>#}
+{#          {% endfor %}#}
+{#      </select></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th scope="row">date </th>#}
+{#    <td><label for="textfield"></label>#}
+{#      <input type="date" name="textfield" class="form-control" id="textfield" /></td>#}
+{#  </tr>#}
+{#<tr>#}
+{#    <th scope="row">time</th>#}
+{#    <td><label for="textfield1"></label>#}
+{#      <input type="time" name="textfield1" id="textfield1" /></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th colspan="2" scope="row"><input type="submit" class="btn btn-primary" name="button" id="button" value="Add" />#}
+{#      <input type="reset" class="btn btn-secondary" name="button2" id="button2" value="Cancel" /></th>#}
+{#    </tr>#}
+{#</table>#}
+{#</form>#}
+
+
+<div class="mb-5 text-center">
+{#            <h5 class="text-primary text-uppercase">Contact Us</h5>#}
+            <h1 class="display-3 text-uppercase mb-0">Allocate trainer</h1>
+        </div>
+    <div class="row g-0">
+            <div class="col-lg-6 mx-auto">
+                <div class="bg-dark p-5">
+                    <form action="/allocation_post/{{id}}" method="post">
+                       {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="select" class="text-primary text-uppercase pb-3">&nbsp; trainer</label>
+{#                                <input required type="text" class="form-control bg-light border-0 px-4" name="textfield" placeholder="Batch Name" style="height: 55px;">#}
+
+                                  <select name="select" id="select" class="form-control">
+{#                                    <option value="" selected>select trainer</option>#}
+                                      {% for i in data %}
+                                      <option value="{{ i.id }}" class="form-control bg-light border-0 px-4">{{ i.username }}</option>
+                                      {% endfor %}
+                                  </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="select1" class="text-primary text-uppercase pb-3">&nbsp; batch</label>
+{#                                <input required type="text" class="form-control bg-light border-0 px-4" name="textfield" placeholder="Batch Name" style="height: 55px;">#}
+
+                                  <select name="select1" id="select1" class="form-control">
+{#                                    <option value="" selected>select batch</option>#}
+                                      {% for i in data1  %}
+                                      <option value="{{ i.id }}" class="form-control bg-light border-0 px-4">{{ i.Batchname }}</option>
+                                      {% endfor %}
+                                  </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield" class="text-primary text-uppercase pb-3">&nbsp; date</label>
+                                <input required type="date" class="form-control bg-light border-0 px-4" name="textfield" style="height: 55px;">
+
+{#                                  <select name="select" id="select" class="form-control">#}
+{#                                      {% for i in data %}#}
+{#                                      <option value="{{ i.id }}" class="form-control bg-light border-0 px-4">{{ i.username }}</option>#}
+{#                                      {% endfor %}#}
+{#                                  </select>#}
+                            </div>
+{#                            <div class="col-12">#}
+{#                                <label for="textfield2" class="text-primary text-uppercase pb-3">&nbsp; From Time</label>#}
+{#                                <input required type="time" class="form-control bg-light border-0 px-4" name="textfield2" placeholder="From Time" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield3" class="text-primary text-uppercase pb-3">&nbsp; To Time</label>#}
+{#                                <input required type="time" class="form-control bg-light border-0 px-4" name="textfield3" placeholder="To Time" style="height: 55px;">#}
+{#                            </div>#}
+
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3 " type="submit">Submit</button>
+                                <button class="btn btn-outline-primary w-100 py-3" style="margin-top: 1em" type="reset">reset</button>
+{#                                <a href="/registration" style="margin-top: 20px" class="btn btn-outline-primary w-100 py-3" type="submit">SIGN UP</a>#}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+</body>
+</html>
+{% endblock %}

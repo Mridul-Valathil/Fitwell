@@ -1,0 +1,278 @@
+{% extends 'shop/shopindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+{#<form id="form1" name="form1" method="get" action="">#}
+{#    {% csrf_token %}#}
+{#  <table width="364" height="435" class="table border-primary border-5 w-100 mx-auto">#}
+{#    <tr>#}
+{#      <th width="171" scope="row">Shop name</th>#}
+{#      <td width="177">{{ data.shopname }}</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Email</th>#}
+{#      <td>{{ data.email }}</td>#}
+{#    </tr>#}
+{#      <th scope="row">Password</th>#}
+{#      <td><label for="textfieldp"></label>#}
+{#      <input type="password" name="textfieldp" id="textfieldp" />{{ data.username }}</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Contact no</th>#}
+{#      <td>{{ data.contactno }}</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Place</th>#}
+{#      <td>{{ data.place }}</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Post</th>#}
+{#      <td>{{ data.post }}</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Pin</th>#}
+{#      <td>{{ data.pin }}</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Opening Time</th>#}
+{#      <td>{{ data.openingtime }}</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Closing Time</th>#}
+{#      <td>{{ data.closingtime }}</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Latitude</th>#}
+{#      <td>{{ data.latitude }}</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Longitude</th>#}
+{#      <td>{{ data.longitude }}</td>#}
+{#    <tr>#}
+{#      <th scope="row">location</th>#}
+{#      <td><a href="https://www.google.com/maps/?q={{ data.latitude }},{{ data.longitude }}" class="btn btn-outline-primary">locate</a></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th colspan="2" scope="row"><a href="/editshopprofile/{{ data.id }}#shop" class="btn btn-primary">edit</a>#}
+{#      </th>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+
+
+<div class="mb-5 text-center">
+{#            <h5 class="text-primary text-uppercase">Contact Us</h5>#}
+            <h1 class="display-3 text-uppercase mb-0">Shop profile</h1>
+        </div>
+    <div class="row g-0">
+            <div class="col-lg-6 mx-auto">
+                <div class="bg-dark p-5">
+                    <form action="" method="get">
+                       {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="textfield" class="text-primary text-uppercase pb-3">&nbsp; Shop name</label>
+                                <div class=" bg-dark border-0 px-4 " name="textfield" style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.shopname }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield2" class="text-primary text-uppercase pb-3">&nbsp; Email</label>
+{#                                <input  type="time" class="form-control bg-light border-0 px-4" name="textfield2" placeholder="From Time" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.email }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield3" class="text-primary text-uppercase pb-3">&nbsp; Contact no</label>
+{#                                <input  type="time" class="form-control bg-light border-0 px-4" name="textfield3" placeholder="To Time" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.contactno }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield4" class="text-primary text-uppercase pb-3">&nbsp; Place</label>
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield4" placeholder="place" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.place }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield5" class="text-primary text-uppercase pb-3">&nbsp; post</label>
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield5" placeholder="post" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield" style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.post }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield6" class="text-primary text-uppercase pb-3">&nbsp; pin</label>
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield6" placeholder="pin" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield" style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.pin }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield7" class="text-primary text-uppercase pb-3">&nbsp; Opening Time</label>
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield7" placeholder="lattitude" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.openingtime }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield8" class="text-primary text-uppercase pb-3">&nbsp; Closing Time</label>
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield8" placeholder="longitude" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.closingtime }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield8" class="text-primary text-uppercase pb-3">&nbsp; Latitude</label>
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield8" placeholder="longitude" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.latitude }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield8" class="text-primary text-uppercase pb-3">&nbsp; longitude</label>
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield8" placeholder="longitude" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><div class=" border-0 px-5 py-2" style="height: 55px; background: linear-gradient(109.7deg, rgb(202, 50, 50) 5.7%, rgb(252,142,38) 92.4%); border-radius: 5px">{{ data.longitude }}</div></div>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield8" class="text-primary text-uppercase pb-3">&nbsp; location</label>
+{#                                <input  type="text" class="form-control bg-light border-0 px-4" name="textfield8" placeholder="longitude" style="height: 55px;">#}
+                                <div class=" bg-dark border-0 px-4 " name="textfield"  style="height: 55px; color: white; font-size: 1.5rem"><a href="https://www.google.com/maps/?q={{ data.latitude }},{{ data.longitude }}" class="btn btn-primary">locate</a></div>
+                            </div>
+{#                            <div class="col-6">#}
+{#                                <input type="email" class="form-control bg-light border-0 px-4" placeholder="Password" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield" class="text-primary text-uppercase pb-3">&nbsp; PASSWORD</label>#}
+{#                                <input type="password" class="form-control bg-light border-0 px-4" name="textfield2" placeholder="password" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <textarea class="form-control bg-light border-0 px-4 py-3" rows="4" placeholder="Message"></textarea>#}
+{#                            </div>#}
+{#     <tr>#}
+{#            <td><div id="gmap"></div></td>#}
+{#     </tr>#}
+
+                            <div class="col-12">
+{#                                <button class="btn btn-primary w-100 py-3 " type="submit">Submit</button>#}
+                                <a href="/editshopprofile/{{ data.id }}#shop" class="btn btn-outline-primary w-100 py-3">edit</a>
+{#                                <a href="/registration" style="margin-top: 20px" class="btn btn-outline-primary w-100 py-3" type="submit">SIGN UP</a>#}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+</body>
+</html>
+{% endblock %}
+{#<style type="text/css">#}
+{#html { height: 100% }#}
+{#body { height: 100%; margin: 0; padding: 0 }#}
+{##map_canvas { height: 100% }#}
+{#</style>#}
+{##}
+{#<script type="text/javascript"#}
+{#src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6v5-2uaq_wusHDktM9ILcqIrlPtnZgEk&sensor=false">#}
+{#</script>#}
+{#<script type="text/javascript">#}
+{##}
+{#    var map;#}
+{#        function initialize() {#}
+{#            var myLatlng = new google.maps.LatLng(11.618061975930,75.36565089010);#}
+{#            var myOptions = {#}
+{#                zoom:7,#}
+{#                center: myLatlng,#}
+{#                mapTypeId: google.maps.MapTypeId.ROADMAP#}
+{#            }#}
+{#            map = new google.maps.Map(document.getElementById("gmap"), myOptions);#}
+{#            // marker refers to a global variable#}
+{#            marker = new google.maps.Marker({#}
+{#                position: myLatlng,#}
+{#                map: map#}
+{#            });#}
+{##}
+{#            google.maps.event.addListener(map, "click", function(event) {#}
+{#                // get lat/lon of click#}
+{#                var clickLat = event.latLng.lat();#}
+{#                var clickLon = event.latLng.lng();#}
+{##}
+{#                // show in input box#}
+{#                document.getElementById("textfield9").value = clickLat.toFixed(5);#}
+{#                document.getElementById("textfield10").value = clickLon.toFixed(5);#}
+{##}
+{#                  var marker = new google.maps.Marker({#}
+{#                        position: new google.maps.LatLng(clickLat,clickLon),#}
+{#                        map: map#}
+{#                     });#}
+{#            });#}
+{#    }#}
+{##}
+{#    window.onload = function () { GetMylocation() };#}
+{##}
+{##}
+{#</script>#}
+{#     <style>#}
+{# div#gmap {#}
+{##}
+{#        width: 300%;#}
+{#        height: 500px;#}
+{#        border:double;#}
+{# }#}
+{#    </style>#}
+{##}
+{#    <form id="form1" runat="server">#}
+{#<center>#}
+{#<!-- MAP HOLDER -->#}
+{##}
+{#<!-- REFERENCES -->#}
+{#Lat: <input type="text" id='lat'>#}
+{#Lon: <input type="text" id='lon'>#}
+{##}
+{#</center>#}
+{##}
+{##}
+{##}
+{##}
+{#<script>#}
+{##}
+{#function GetMylocation() {#}
+{#  if (navigator.geolocation) {#}
+{#    navigator.geolocation.getCurrentPosition(showPosition);#}
+{#  } else {#}
+{#    //x.innerHTML = "Geolocation is not supported by this browser.";#}
+{#      alert("Geolocation is not supported by this browser.")#}
+{#  }#}
+{#}#}
+{#var x1 = document.getElementById("textfield9");#}
+{#var x2 = document.getElementById("textfield10");#}
+{#var map;#}
+{#function showPosition(position) {#}
+{#  x1.value=position.coords.latitude;#}
+{#  x2.value=position.coords.longitude;#}
+{##}
+{#  var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);#}
+{#            var myOptions = {#}
+{#                zoom:14,#}
+{#                center: myLatlng,#}
+{#                mapTypeId: google.maps.MapTypeId.ROADMAP#}
+{#            }#}
+{#            map = new google.maps.Map(document.getElementById("gmap"), myOptions);#}
+{#            // marker refers to a global variable#}
+{#            marker = new google.maps.Marker({#}
+{#                position: myLatlng,#}
+{#                map: map#}
+{#            });#}
+{##}
+{#            google.maps.event.addListener(map, "click", function(event) {#}
+{#                // get lat/lon of click#}
+{#                var clickLat = event.latLng.lat();#}
+{#                var clickLon = event.latLng.lng();#}
+{##}
+{#                // show in input box#}
+{#                document.getElementById("textfield9").value = clickLat.toFixed(5);#}
+{#                document.getElementById("textfield10").value = clickLon.toFixed(5);#}
+{##}
+{#                  var marker = new google.maps.Marker({#}
+{#                        position: new google.maps.LatLng(clickLat,clickLon),#}
+{#                        map: map#}
+{#                     });#}
+{#            });#}
+{##}
+{##}
+{#}#}
+{#</script>#}

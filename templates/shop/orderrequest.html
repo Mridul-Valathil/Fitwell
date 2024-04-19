@@ -1,0 +1,94 @@
+{% extends 'shop/shopindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<style>
+/* Internal CSS starts here */
+table {
+  border: 2px solid #fc7442;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+ td {
+  border: 2px solid #fc7442;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+    font-size: 25px;
+    padding: 20px;
+    border: 2px solid white;
+    text-transform: capitalize;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: lightgray;
+    color: black;
+}
+tr{
+    color: black;
+}
+
+
+{#.btun {#}
+{#  background-color: red;#}
+{#  color: white;#}
+{#  border-radius: 5px;#}
+{#  padding: 5px 10px;#}
+{#  text-decoration: none;#}
+{#}#}
+{##}
+{#.btun:hover {#}
+{#  background-color: #0056b3;#}
+{#}#}
+</style>
+</head>
+
+<body>
+
+
+<div class="mb-5 text-center">
+{#            <h5 class="text-primary text-uppercase">Contact Us</h5>#}
+            <h1 class="display-3 text-uppercase mb-0">View order </h1>
+        </div>
+
+
+<table>
+  <tr>
+    <th width="15" scope="col">#</th>
+    <th width="67" scope="col">User</th>
+{#    <th width="88" scope="col">Product</th>#}
+    <th width="88" scope="col">Total</th>
+    <th width="64" scope="col">Date</th>
+    <th width="137" scope="col">Payment Status</th>
+    <th width="122" scope="col">Payment Date</th>
+    <th width="81" scope="col">&nbsp;</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>&nbsp;<i class="fa fa-user">&nbsp; {{ i.user }}</i><br/><i class="fas fa-phone">{{ i.up }}</i></td>
+{#    <td>{{ i.name }}</td>#}
+    <td>&nbsp;{{ i.sum }}</td>
+    <td>&nbsp;{{ i.date }}</td>
+    <td>&nbsp;{{ i.paymentstatus }}</td>
+    <td>&nbsp;{{ i.paymentdate }}</td>
+      <td><p><a href="/vieworder/{{ i.id }}#shop" class="btn btn-outline-primary" style="width: 100px">ORDER ITEMS</a> </p></td>
+{#    <p><a href="/approveorder/{{ i.id }}#shop" class="btn btn-primary" style="width: 100px">approve</a></p>#}
+{#    <p><a href="/rejectorder/{{ i.id }}" class="btn btn-secondary" style="width: 100px">reject</a></p></td>#}
+  </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends 'trainer/trainerindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+{#<form action="/uploadmealplans_post" method="post"><table width="200" class="table border-primary border-5 w-100 mx-auto">#}
+{#    {% csrf_token %}#}
+{#  <tr>#}
+{#    <th scope="row">Category</th>#}
+{#    <td><label for="textfield0"></label>#}
+{#      <input type="text" class="form-control" name="textfield0" id="textfield0" required/></td></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th scope="row">Day</th>#}
+{#    <td><label for="textfield"></label>#}
+{#      <input type="text" class="form-control" name="textfield" id="textfield" required/></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th scope="row">Breakfast</th>#}
+{#    <td><label for="textfield2"></label>#}
+{#      <input type="text" class="form-control" name="textfield2" id="textfield2" required//></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th scope="row">Lunch</th>#}
+{#    <td><label for="textfield3"></label>#}
+{#      <input type="text" class="form-control" name="textfield3" id="textfield3" required//></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th scope="row">Dinner</th>#}
+{#    <td><label for="textfield4"></label>#}
+{#      <input type="text" class="form-control" name="textfield4" id="textfield4" required//></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th colspan="2" scope="row"><input type="submit" name="button" id="button"  class="btn btn-primary" value="Upload" />#}
+{#      <input type="reset" name="button2" id="button2" value="Cancel"  class="btn btn-secondary" /></th>#}
+{#    </tr>#}
+{#</table>#}
+{##}
+{#</form>#}
+
+
+
+
+
+    <div class="mb-5 text-center">
+{#            <h5 class="text-primary text-uppercase">Contact Us</h5>#}
+            <h1 class="display-3 text-uppercase mb-0">upload meal plans</h1>
+        </div>
+    <div class="row g-0">
+            <div class="col-lg-6 mx-auto">
+                <div class="bg-dark p-5">
+                    <form action="/uploadmealplans_post" method="post">
+                       {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="textfield0" class="text-primary text-uppercase pb-3">&nbsp; Category</label>
+                                <input required type="text" class="form-control bg-light border-0 px-4" name="textfield0" placeholder="Category" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield" class="text-primary text-uppercase pb-3">&nbsp; Day</label>
+                                <input required type="text" class="form-control bg-light border-0 px-4" name="textfield" placeholder="Day" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield2" class="text-primary text-uppercase pb-3">&nbsp; Breakfast</label>
+                                <input required type="text" class="form-control bg-light border-0 px-4" name="textfield2" placeholder="Breakfast" style="height: 55px;">
+                            </div>
+{#                            <div class="col-12">#}
+{#                                <label for="textfield2" class="text-primary text-uppercase pb-3">&nbsp; Breakfast</label>#}
+{#                                <input required type="text" class="form-control bg-light border-0 px-4" name="textfield2" style="height: 55px;">#}
+{#                            </div>#}
+                            <div class="col-12">
+                                <label for="textfield3" class="text-primary text-uppercase pb-3">&nbsp; Lunch</label>
+                                <input required type="text" class="form-control bg-light border-0 px-4" name="textfield3" placeholder="Lunch" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield4" class="text-primary text-uppercase pb-3">&nbsp; Dinner</label>
+                                <input required type="text" class="form-control bg-light border-0 px-4" name="textfield4" placeholder="Dinner" style="height: 55px;">
+                            </div>
+{#                            <div class="col-12">#}
+{#                                <label for="textfield5" class="text-primary text-uppercase pb-3">&nbsp; post</label>#}
+{#                                <input required type="text" class="form-control bg-light border-0 px-4" name="textfield5" placeholder="post" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield6" class="text-primary text-uppercase pb-3">&nbsp; pin</label>#}
+{#                                <input required type="text" class="form-control bg-light border-0 px-4" name="textfield6" placeholder="pin" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield7" class="text-primary text-uppercase pb-3">&nbsp; lattitude</label>#}
+{#                                <input required type="text" class="form-control bg-light border-0 px-4" name="textfield7" placeholder="lattitude" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield8" class="text-primary text-uppercase pb-3">&nbsp; longitude</label>#}
+{#                                <input required type="text" class="form-control bg-light border-0 px-4" name="textfield8" placeholder="longitude" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-6">#}
+{#                                <input type="email" class="form-control bg-light border-0 px-4" placeholder="Password" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield" class="text-primary text-uppercase pb-3">&nbsp; PASSWORD</label>#}
+{#                                <input type="password" class="form-control bg-light border-0 px-4" name="textfield2" placeholder="password" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <textarea class="form-control bg-light border-0 px-4 py-3" rows="4" placeholder="Message"></textarea>#}
+{#                            </div>#}
+{#     <tr>#}
+{#            <td><div id="gmap"></div></td>#}
+{#     </tr>#}
+
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3 " type="submit">Upload</button>
+                                <button class="btn btn-outline-primary w-100 py-3" style="margin-top: 1em" type="reset">cancel</button>
+{#                                <a href="/registration" style="margin-top: 20px" class="btn btn-outline-primary w-100 py-3" type="submit">SIGN UP</a>#}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+</body>
+</html>
+
+
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends 'trainer/trainerindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+{#<form id="form1" name="form1" method="post" action="/editworkout_post/{{ data.id }}">#}
+{#    {% csrf_token %}#}
+{#  <table width="524" height="500" class="table border-primary border-5 w-100 mx-auto">#}
+{#    <tr>#}
+{#      <th width="172" scope="row">Workout name</th>#}
+{#      <td width="336"><label for="textfield"></label>#}
+{#      <input type="text" class="form-control" name="textfield" id="textfield"   value="{{ data.workoutname }}"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Category</th>#}
+{#      <td><label for="textfield2"></label>#}
+{#      <input type="text" class="form-control" name="textfield2" id="textfield2"   value="{{ data.category }}"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Duration</th>#}
+{#      <td><label for="textfield3"></label>#}
+{#      <input type="text" class="form-control" name="textfield3" id="textfield3"  value="{{ data.duration }}"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Exercises</th>#}
+{#      <td><label for="textarea"></label>#}
+{#      <textarea name="textarea" class="form-control" id="textarea" cols="45" rows="5"> {{ data.exercise }}</textarea></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Sets</th>#}
+{#      <td><label for="textfield4"></label>#}
+{#      <input type="text" class="form-control" name="textfield4" id="textfield4"  value="{{ data.sets }}" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Reps</th>#}
+{#      <td><label for="textfield5"></label>#}
+{#      <input type="text" class="form-control" name="textfield5" id="textfield5"  value="{{ data.reps }}" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Rest Time</th>#}
+{#      <td><label for="textfield6"></label>#}
+{#      <input type="text" class="form-control" name="textfield6" id="textfield6"  value="{{ data.resttime }}" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Submit"  class="btn btn-primary"/>#}
+{#      <input type="reset" name="button2" id="button2" value="cancel"   class="btn btn-secondary"/></th>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+
+
+
+ <div class="mb-5 text-center">
+{#            <h5 class="text-primary text-uppercase">Contact Us</h5>#}
+            <h1 class="display-3 text-uppercase mb-0">edit Workout</h1>
+        </div>
+    <div class="row g-0">
+            <div class="col-lg-6 mx-auto">
+                <div class="bg-dark p-5" >
+                    <form action="/editworkout_post/{{ data.id }}" method="post">
+                       {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="textfield" class=" text-uppercase pb-3" style="color: white; font-size: 1.2rem;">&nbsp; Workout name</label>
+                                <input    value="{{ data.workoutname }}" type="text" class="form-control  border-0 px-4" name="textfield" placeholder="Workout name" >
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield2" class="text-uppercase pb-3" style="color: white; font-size: 1.2rem;">&nbsp; Category</label>
+                                <input  type="text" value="{{ data.category }}" class="form-control border-0 px-4" name="textfield2" placeholder="Category" >
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield3" class=" text-uppercase pb-3" style="color: white; font-size: 1.2rem;">&nbsp; Duration</label>
+                                <input   type="text"  value="{{ data.duration }}" class="form-control  border-0 px-4" name="textfield3" placeholder="Duration" >
+                            </div>
+                            <div class="col-12">
+                                <label for="textarea" class="text-uppercase pb-3" style="color: white; font-size: 1.2rem;">&nbsp; Exercises</label>
+                                <textarea  cols="45" rows="5" required type="text" class="form-control  border-0 px-4" name="textarea" placeholder="Exercises" >{{ data.exercise }}</textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield4" class=" text-uppercase pb-3" style="color: white; font-size: 1.2rem;">&nbsp; Sets</label>
+                                <input  type="text" value="{{ data.sets }}" class="form-control border-0 px-4" name="textfield4" placeholder="Sets" >
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield5" class=" text-uppercase pb-3" style="color: white; font-size: 1.2rem;">&nbsp; Reps</label>
+                                <input  type="text" value="{{ data.reps }}" class="form-control  border-0 px-4" name="textfield5" placeholder="Reps" >
+                            </div>
+                            <div class="col-12">
+                                <label for="textfield6" class=" text-uppercase pb-3" style="color: white; font-size: 1.2rem;">&nbsp; Rest Time</label>
+                                <input  type="text" value="{{ data.resttime }}" class="form-control  border-0 px-4" placeholder="Rest time" name="textfield6" id="textfield6"  >
+                            </div>
+{#                            <div class="col-12">#}
+{#                                <label for="textfield8" class="text-primary text-uppercase pb-3">&nbsp; longitude</label>#}
+{#                                <input type="text" class="form-control bg-light border-0 px-4" name="textfield8" id="textfield8" placeholder="longitude" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-6">#}
+{#                                <input type="email" class="form-control bg-light border-0 px-4" placeholder="Password" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <label for="textfield" class="text-primary text-uppercase pb-3">&nbsp; PASSWORD</label>#}
+{#                                <input type="password" class="form-control bg-light border-0 px-4" name="textfield2" placeholder="password" style="height: 55px;">#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <textarea class="form-control bg-light border-0 px-4 py-3" rows="4" placeholder="Message"></textarea>#}
+{#                            </div>#}
+{#     <div>#}
+{#            <div id="gmap"></div>#}
+{#     </div>#}
+
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3 " type="submit">Submit</button>
+                                <button class="btn btn-outline-primary w-100 py-3" style="margin-top: 1em" type="reset">reset</button>
+{#                                <a href="/registration" style="margin-top: 20px" class="btn btn-outline-primary w-100 py-3" type="submit">SIGN UP</a>#}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+</html>
+{% endblock %}
